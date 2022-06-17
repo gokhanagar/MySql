@@ -12,7 +12,7 @@ https://dev.mysql.com/doc/refman/8.0/en/char.html
 
 */
 
-use batch59;
+use test;
 
 
 

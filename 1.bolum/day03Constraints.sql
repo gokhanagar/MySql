@@ -1,9 +1,9 @@
 -- ===================== CONSTRAINTS - KISITLAMALAR ======================================
 /*           
-    NOT NULL	- Bir Sütunun  NULL içermemesini, yani boş olmamasını sağlar.
-    UNIQUE		- Bir sütundaki tüm değerlerin BENZERSİZ yani tek olmasını sağlar.  
-    PRIMARY KEY	- Bir sütünün NULL içermemesini ve sütundaki verilerin
-                  BENZERSİZ olmasını sağlar. (NOT NULL ve UNIQUE)
+    NOT NULL	- Bir Sutunun  NULL içermemesini, yani boş olmamasını sağlar.
+    UNIQUE		- Bir sutundaki tüm değerlerin BENZERSİZ yani tek olmasını sağlar.  
+    PRIMARY KEY	- Bir sutunun NULL içermemesini ve sütundaki verilerin
+                  BENZERSIZ olmasını sağlar. (NOT NULL ve UNIQUE)
     FOREIGN KEY	- Başka bir tablodaki Primary Key’i referans göstermek için kullanılır.
                   Böylelikle, tablolar arasında ilişki kurulmuş olur.
                   foreign ve primary ile tablolar birbirine bağlamadan da, id leri ayni olan 
@@ -11,7 +11,7 @@
                   ayni field verilebilir, parent child ilişkisi olmamiş olur
 
 -- ========================================================================================*/
-use batch59;
+use test ;
  
 CREATE TABLE calisanlar
 (
@@ -137,7 +137,7 @@ INSERT INTO notlar VALUES ('126', 'Matematik',90);
 select * from notlar;
    
 -- FK ile birleştirilen tablolardaki tüm verileri çekmek için
--- JOIN İşlemi yapmak gerekir. Bu konuyu sonra göreceğiz.
+-- JOIN İşlemi yapmak gerekir. 
 SELECT * FROM talebeler, notlar WHERE talebeler.id = notlar.talebe_id;
    
 delete from notlar where talebe_id='123';-- child
