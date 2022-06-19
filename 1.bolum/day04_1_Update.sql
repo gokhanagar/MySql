@@ -1,7 +1,7 @@
 -- UPDATE - SET  
-​
-use batch59;
-​
+
+use test;
+
 CREATE TABLE tedarikciler -- parent
 (
 vergi_no int PRIMARY KEY,
@@ -13,7 +13,7 @@ INSERT INTO tedarikciler VALUES (101, 'IBM', 'Kim Yon');
 INSERT INTO tedarikciler VALUES (102, 'Huawei', 'Çin Li');
 INSERT INTO tedarikciler VALUES (103, 'Erikson', 'Maki Tammen');
 INSERT INTO tedarikciler VALUES (104, 'Apple', 'Adam Eve');
-​
+
 select * from tedarikciler;
     
 CREATE TABLE urunler -- child
@@ -35,12 +35,12 @@ INSERT INTO urunler VALUES(104, 1006,'TV', 'Ali Bak');
 INSERT INTO urunler VALUES(104, 1007,'Phone', 'Aslan Yılmaz');
     
 SELECT * FROM urunler;
-​
+
 -- SORU1: İki tabloyu birleştirerek listeleyiniz.
 SELECT * from tedarikciler, urunler where tedarikciler.vergi_no = urunler.ted_vergino;
+
 ​
-​
-​
+
 -- UPDATE - SET     
 -- SYNTAX
 -- UPDATE tablo_adı
@@ -52,10 +52,10 @@ SELECT * from tedarikciler, urunler where tedarikciler.vergi_no = urunler.ted_ve
 update tedarikciler
 set firma_ismi = 'Vestel'
 where vergi_no= '102';
-​
+
 select * from tedarikciler;
-​
-​
+
+
 --  SORU3: Tedarikciler tablosundaki tüm firma isimlerini 'CASPER' olarak güncelleyeniz.
 update tedarikciler set firma_ismi = 'CASPER';
 ​
