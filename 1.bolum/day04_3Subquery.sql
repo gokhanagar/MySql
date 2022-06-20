@@ -1,7 +1,7 @@
 --  ============================= SUBQUERIES ====================================
 --  SORGU içinde çalişan SORGUYA SUBQUERY (ALT SORGU) denilir.
 ​
-use batch59;
+use test;
 ​
 CREATE TABLE calisanlar 
 (
