@@ -97,18 +97,3 @@ where isim = 'Maras';
 update sehirler2
 set nufus=756000
 where alan_kodu =344; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
