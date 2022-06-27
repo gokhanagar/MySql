@@ -1,3 +1,4 @@
+use test;
 CREATE TABLE personel4 
 (
 id int(9), 
@@ -43,33 +44,60 @@ select isim , max(maas)
 from personel4
 group by isim;
 
+-- ayni isimdeki kisilerden maximum maasi alan kisinin maasi 5000'den cok ise
+-- isim ve max maasi listeleyin
+select isim, max(maas) as max_maas
+from personel4
+group by isim
+having max_maas > 5000;
+-- HAVING komutu AGGREGATE FONKSIYONLAR'i filtrelemek icin kullanilir
+-- (normal sorgularda WHERE komutunun yaptigi islev)
 
+-- UNION 
+-- Eger tek sorguda birlestiremeyecegim iki sorgunun sonucunu ayni tabloda 
+-- gormek istersek UNION islemi kullanilir
+-- BU durumda dikkat etmemiz gereken konu iki sorguda da field sayisi ve 
+-- alt alta gelecek field data tiplerinin ayni olmasidir
+-- 1) Maasi 4000’den cok olan isci isimlerini ve 
+--     5000 liradan fazla maas alinan sehirleri  gosteren sorguyu yaziniz
 
+select isim from personel4 where maas>4000
+union 
+select sehir from personel4 where maas>5000;
+--  Ismi Mehmet Ozturk olan kisilerin isim ve maaslarini ve
+-- Istanbulda calisanlarin sehir adi ve maaslarini coktan aza sirali olarak listeleyin
+select isim,maas from personel4 where isim = 'Mehmet Ozturk'
+union
+select sehir,maas from personel4 where sehir = 'Istanbul' order by maas desc;
 
+-- union ile yaptigimiz sorguyu siralamak istersek
+-- 2.sorgudan sonra ORDER BY yazabiliriz
 
+CREATE TABLE personel_bilgi 
+(
+id int(9), 
+tel char(10) UNIQUE , 
+cocuk_sayisi int(2)
+); 
 
+INSERT INTO personel_bilgi VALUES(123456789, '5302345678' ,5);
+INSERT INTO personel_bilgi VALUES(234567890, '5422345678', 4);
+INSERT INTO personel_bilgi VALUES(345678901, '5354561245', 3); 
+INSERT INTO personel_bilgi VALUES(456789012, '5411452659', 3);
+INSERT INTO personel_bilgi VALUES(567890123, '5551253698', 2);
+INSERT INTO personel_bilgi VALUES(456789012, '5524578574', 2);
+INSERT INTO personel_bilgi VALUES(123456710, '5537488585', 1);
+SELECT * FROM personel_bilgi;
 
+-- id’si 123456789 olan personelin  Personel4 tablosundan sehir ve maasini, 
+-- personel_bilgi tablosundan da tel ve cocuk sayisini yazdirin  
+select sehir as tel_num_veya_sehir ,maas as cocuk_sayisi_veya_maas from personel4 where id =123456789
+union 
+select tel,cocuk_sayisi  from personel_bilgi where id = 123456789;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- UNION ALL
+-- personel4 tablosunda ankarada calisan personelin isim ve maaslarini listeleyin
+SELECT isim,maas
+FROM personel4
+WHERE sehir='Ankara';
 
