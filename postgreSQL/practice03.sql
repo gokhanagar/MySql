@@ -62,15 +62,3 @@ where isim = 'ali can'
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
