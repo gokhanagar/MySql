@@ -68,5 +68,3 @@ SELECT  product_id ,
   customer_name
 FROM customers_products;
 
-
-
