@@ -98,25 +98,3 @@ select * from calisanlar;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
