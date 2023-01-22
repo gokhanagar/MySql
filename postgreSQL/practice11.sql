@@ -48,40 +48,40 @@ select * from personel where isim ilike 'a%'
 select * from personel where isim like '%n'
 
 -- 9) email adresi gmail olan personel bilgilerini listeleyiniz.
-
+select * from personel where email like '%gmail.com'
 
 -- 10) email adresi gmail olmayan personel bilgilerini listeleyiniz.
 
 
 -- 11) id'si 3,5,7 ve 9 olan personel bilgilerini listeleyiniz.
-
+select * from personel where id in(3,5,7,9)
 
 -- 12) yaşı 39,48 ve 54 olmayan personel bilgilerini listeleyiniz.
 
 
 -- 13) yaşı 30 ve 40 arasında olan personel bilgilerini listeleyiniz.
+select * from personel where yas between 30 and 40 
 
-
--- 14) yaşı 30 ve 40 arasında olmyan personel bilgilerini listeleyiniz.
+-- 14) yaşı 30 ve 40 arasında olmayan personel bilgilerini listeleyiniz.
 
 
 -- 15) emaili null olan personel bilgilerini listeleyiniz.
 
 
 -- 16) personel bilgilerini yaşa göre sıralayınız.
-
+select * from personel order by yas 
 
 -- 17) personel bilgilerini maaşa göre sıralayınız.
-
+select * from personel order by maas
 
 -- 18) personelin yaşlarını büyükten küçüğe doğru sıralayınız.
-
+select * from personel order by yas desc 
 
 -- 20) personelin maaşlarını büyükten küçüğe doğru sıralayınız.
-
+select * from personel order by maas desc
 
 -- 21) En yüksek maaş olan ilk 3 personel bilgilerini sıralayınız
-
+select max(maas from personel  limit 3
 
 
 
