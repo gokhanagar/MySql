@@ -97,13 +97,3 @@ select * from personel order by maas desc limit 3;
 
 
 
-
-
-
-
-
-
-
-
-
-
