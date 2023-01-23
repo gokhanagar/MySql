@@ -97,17 +97,3 @@ select  worker_name,worker_salary, worker_salary*1.3 as zamli from workers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
