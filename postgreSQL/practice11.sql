@@ -122,17 +122,3 @@ select max(maas from personel  limit 3
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
