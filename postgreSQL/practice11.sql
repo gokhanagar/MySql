@@ -81,7 +81,7 @@ select * from personel order by yas desc
 select * from personel order by maas desc
 
 -- 21) En yüksek maaş olan ilk 3 personel bilgilerini sıralayınız
-select max(maas from personel  limit 3
+select max(maas from personel  limit 3)
 
 
 
